@@ -1,0 +1,99 @@
+{
+  "info": {
+    "_postman_id": "apnamarket-api-collection",
+    "name": "ApnaMarket API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {"raw": "http://localhost:5000/api/register", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "register"]}
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {"raw": "http://localhost:5000/api/login", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "login"]}
+      }
+    },
+    {
+      "name": "Get Products",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:5000/api/products", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "products"]}
+      }
+    },
+    {
+      "name": "Get Product By ID",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:5000/api/products/:id", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "products", ":id"]}
+      }
+    },
+    {
+      "name": "Add/Update Cart Item",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"productId\": \"<PRODUCT_ID>\",\n  \"quantity\": 1\n}"
+        },
+        "url": {"raw": "http://localhost:5000/api/cart", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "cart"]}
+      }
+    },
+    {
+      "name": "Get User Cart",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:5000/api/cart", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "cart"]}
+      }
+    },
+    {
+      "name": "Remove Cart Item",
+      "request": {
+        "method": "DELETE",
+        "url": {"raw": "http://localhost:5000/api/cart/:itemId", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "cart", ":itemId"]}
+      }
+    },
+    {
+      "name": "Clear Cart",
+      "request": {
+        "method": "DELETE",
+        "url": {"raw": "http://localhost:5000/api/cart", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "cart"]}
+      }
+    },
+    {
+      "name": "Place Order",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"items\": [\n    { \"productId\": \"<PRODUCT_ID>\", \"quantity\": 1 }\n  ],\n  \"total\": 1000\n}"
+        },
+        "url": {"raw": "http://localhost:5000/api/orders", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "orders"]}
+      }
+    },
+    {
+      "name": "Get User Orders",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "http://localhost:5000/api/orders", "protocol": "http", "host": ["localhost"], "port": "5000", "path": ["api", "orders"]}
+      }
+    }
+  ]
+}
