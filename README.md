@@ -37,7 +37,7 @@ cd ../server
 npm install
 ```
 
-### 4. Seed Products (optional)
+### 4. Seed Products
 ```
 node utils/seedProducts.js
 ```
@@ -68,11 +68,8 @@ npm run test
 - Product browsing
 - Cart management
 - Order placement
-- Admin dashboard (optional)
 
 ## Folder Structure
 - `client/` - React app (Vite)
 - `server/` - Express API, MongoDB models, routes
 
-## License
-MIT
